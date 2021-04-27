@@ -32,25 +32,14 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment implements Response.Listener<JSONArray>,
-        Response.ErrorListener{
-    private HomeViewModel homeViewModel;
+public class HomeFragment extends Fragment implements Response.Listener<JSONArray>, Response.ErrorListener{
     private String url;
     List<TipoCrime> tiposCrimes =  new ArrayList<>();
     private RecyclerView rv;
     private View root;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         root = inflater.inflate(R.layout.fragment_home, container, false);
-        /*final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });*/
-
         url = "https://babyier.rocks/uniritter/DadosCrimeRS2020_NomeTiposCrimes.json";
         RequestQueue queue = Volley.newRequestQueue(getContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
@@ -61,35 +50,27 @@ public class HomeFragment extends Fragment implements Response.Listener<JSONArra
     }
 
     @Override
-    public void onErrorResponse(VolleyError error) {
-    }
-
-    @Override
     public void onResponse(JSONArray response) {
         try {
-            Log.e("OPA","1");
             for(int i = 0; i < response.length(); i++) {
                 JSONObject json = null;
                 json = response.getJSONObject(i);
-
-                Log.e("OPA",json.getString("TIPO"));
 
                 TipoCrime obj = new TipoCrime(json.getString("TIPO"),900);
                 obj.getCrimeTipo();
                 tiposCrimes.add(obj);
             }
-            Log.e("OPA","2");
             rv = root.findViewById(R.id.RecyclerViewListApi);
             rv.setLayoutManager(new LinearLayoutManager(getContext()));
-            Log.e("OPA","3");
 
             CrimeAdapter crimeAdapter = new CrimeAdapter(tiposCrimes, R.layout.content_crimes);
-            Log.e("OPA","4");
             rv.setAdapter(crimeAdapter);
-
-            Log.e("OPA","5");
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
     }
 }
