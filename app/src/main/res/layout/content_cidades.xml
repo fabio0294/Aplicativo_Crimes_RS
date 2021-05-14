@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:context=".DetalheCidadeActivity">
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewCidade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
@@ -23,13 +25,11 @@
             android:padding="5dp">
 
             <TextView
-                android:id="@+id/textViewTitleNomeCrime"
-                android:layout_width="wrap_content"
+                android:id="@+id/textViewTitleNomeCidade"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="sans-serif"
-                android:text="TextView"
-                android:textSize="24sp" />
+                android:text="TextView" />
 
             <TextView
                 android:id="@+id/textViewNumeroCrimesCidade"

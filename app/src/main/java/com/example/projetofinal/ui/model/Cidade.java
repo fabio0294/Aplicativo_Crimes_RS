@@ -25,6 +25,11 @@ public class Cidade implements Parcelable {
         this.cidadeNumeroTotalCrimes = cidadeNumeroTotalCrimes;
     }
 
+    public Cidade(String cidadeNome, int numeroTotalCrimes) {
+        this.cidadeNome = cidadeNome;
+        this.cidadeNumeroTotalCrimes = numeroTotalCrimes;
+    }
+
     public String getCidadeNome() {
         return cidadeNome;
     }
