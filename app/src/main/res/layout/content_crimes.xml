@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="crimes"
+            type="com.example.projetofinal.ui.model.TipoCrime" />
+    </data>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -28,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif"
-                android:text="TextView"
+                android:text="@{crimes.crimeTipo}"
                 android:textSize="24sp" />
 
             <TextView
@@ -37,8 +44,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
-                android:text="TextView"
+                android:text="@{Integer.toString(crimes.crimeNumeroTotal)}"
                 android:textSize="24sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
+</layout>
