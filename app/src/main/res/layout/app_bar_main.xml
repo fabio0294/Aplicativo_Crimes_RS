@@ -18,6 +18,8 @@
             android:background="@drawable/side_nav_bar"
             app:popupTheme="@style/Theme.ProjetoFinal.PopupOverlay" />
 
+
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />

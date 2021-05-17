@@ -1,20 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeTelaInicial"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/textViewTitleCrimes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:fontFamily="sans-serif-black"
-        android:text="TELA INICIAL"
-        android:textSize="24sp"
+
+    <ImageView
+        android:id="@+id/ImageNews"
+        android:layout_width="440dp"
+        android:layout_height="236dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@mipmap/news3"
+        tools:layout_editor_absoluteY="-8dp" />
+
+    <TextView
+        android:id="@+id/textImage"
+        android:layout_width="378dp"
+        android:layout_height="44dp"
+        android:text="Fazendeiro preso por suspeita de envolvimento em assassinato .. Ler mais"
+        android:textColor="#808080"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/News1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImageNews" />
+
+    <TextView
+        android:id="@+id/News1"
+        android:layout_width="377dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="76dp"
+        android:text="EMBOSCADA"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImageNews" />
+
+    <TextView
+        android:id="@+id/insideText1"
+        android:layout_width="358dp"
+        android:layout_height="114dp"
+        android:text="Empresario do ramo de jogos é assassinado em Porto Alegre, dois dos suspeitos foram apreendidos horas após o crime acontecer, policia acredita ter pelo menos, mais três envolvidos no crime.. Ler mais"
+        android:textColor="#808080"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/News1"
+        app:layout_constraintStart_toStartOf="@+id/News1" />
+
+    <TextView
+        android:id="@+id/News2"
+        android:layout_width="372dp"
+        android:layout_height="146dp"
+        android:layout_marginEnd="4dp"
+        android:text="ASSALTO A BANCO"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/News1"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <TextView
+        android:id="@+id/insideText2"
+        android:layout_width="357dp"
+        android:layout_height="110dp"
+        android:text="Grupo de Criminosos invadem cinco agências bancárias ao mesmo tempo em região metropolitana de Porto Alegre, acredita-se que o grupo está envolvido a assaltos em Paraná, Santa Catarina e outros três estados.. Ler mais"
+        android:textColor="#808080"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/News2"
+        app:layout_constraintStart_toStartOf="@+id/News2" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
