@@ -16,5 +16,9 @@
             android:id="@+id/nav_gallery"
             android:icon="?android:attr/actionModeFindDrawable"
             android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/nav_bo"
+            android:icon="@mipmap/add"
+            android:title="Crie seu B.O" />
     </group>
 </menu>
