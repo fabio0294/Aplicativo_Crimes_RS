@@ -49,6 +49,7 @@ public class DadosCidades extends Fragment implements InterfaceDados.DataView {
             public void onRefresh() {
                 str.setRefreshing(true);
                 presenter.start();
+                str.setRefreshing(true);
             }
         });
 
