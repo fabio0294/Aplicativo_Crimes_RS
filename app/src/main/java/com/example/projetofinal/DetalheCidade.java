@@ -36,9 +36,11 @@ public class DetalheCidade extends AppCompatActivity {
         tv.setText(cidade.getCidadeNome());
 
         try {
-            Log.e("OPA","NRO CRIMES:" + cidade.getCidadeCrimes().size()+"");
+            Log.i("DEBUG","**********************");
+            Log.i("DEBUG","Tamanho da lista de crimes no objeto DetalheCidade: " + cidade.getCidadeCrimes().size());
+            Log.i("DEBUG","**********************");
         } catch (Exception ex){
-            Log.e("OPA","ERRO:" + ex.getMessage());;
+            Log.e("ERROR",ex.getMessage());;
         }
 
         /*List<TipoCrime> arrayCrimes = cidade.getCidadeCrimes();

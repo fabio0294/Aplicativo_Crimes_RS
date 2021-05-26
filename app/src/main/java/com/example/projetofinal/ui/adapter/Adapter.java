@@ -88,13 +88,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ListaViewHolder> {
                     Cidade cidade = (Cidade) btn.getTag();
                     Intent intent = new Intent(holder.viewcidades.getRoot().getContext(), DetalheCidade.class);
 
-
                     List<TipoCrime> arrayCrimes = cidade.getCidadeCrimes();
-                    Log.e("OPA","Tamanho no adapter: " + arrayCrimes.size());
-                    for (TipoCrime tipocrime:arrayCrimes){
-                        Log.e("OPA","Nome crime: " + tipocrime.getCrimeTipo());
-                        Log.e("OPA","Numero de crimes: " + tipocrime.getCrimeNumeroTotal());
-                    }
+                    Log.i("DEBUG","**********************");
+                    Log.i("DEBUG","Tamanho da lista de crimes no adapter: " + arrayCrimes.size());
+                    Log.i("DEBUG","**********************");
 
                     intent.putExtra("objCidade", cidade);
                     holder.viewcidades.getRoot().getContext().startActivity(intent);
