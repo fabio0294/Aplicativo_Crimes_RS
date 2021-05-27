@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.projetofinal.TelaInicial"
-        android:label="Início"
+        android:label="Newsletter"
         tools:layout="@layout/fragment_inicio" />
 
     <fragment
@@ -22,5 +22,11 @@
         android:name="com.example.projetofinal.DadosCidades"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_dados_cidades" />
+
+    <fragment
+        android:id="@+id/nav_bo"
+        android:name="com.example.projetofinal.CriacaoBoletim"
+        android:label="Abrir Boletim de Ocorrência"
+        tools:layout="@layout/fragment_criacao_boletim" />
 
 </navigation>
