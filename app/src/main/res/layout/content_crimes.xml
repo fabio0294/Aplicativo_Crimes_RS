@@ -31,21 +31,23 @@
 
             <TextView
                 android:id="@+id/textViewTitleNomeCrime"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif"
                 android:text="@{crimes.crimeTipo}"
-                android:textSize="24sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textViewNumeroCrimesCidade"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
                 android:text="@{Integer.toString(crimes.crimeNumeroTotal)}"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

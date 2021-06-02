@@ -105,6 +105,27 @@ public class PresenterDadosCidades implements Response.Listener<JSONArray>,
                 if (aux == 2){
                     break;
                 }
+                //EXIBIMOS APENAS AS DUAS PRIMEIRAS CIDADES PARA TESTE
+                if (aux == 2){
+                    break;
+                }
+            }
+
+            Log.i("DEBUG","**********************");
+            Log.i("DEBUG", "**********************RESULTADO DA LISTA DE PARCELABLE QUE ARMAZENA AS INSTANCIAS DE CIDADE (AQUI ESTÁ APRESENTANDO OS TOTAIS DA CIDADE AGUA SANTA PARA TODAS AS CIDADES LIDAS )");
+
+            for (Parcelable parcelable:lista) {
+                Cidade cidade = (Cidade) parcelable;
+
+                Log.i("DEBUG","**********************");
+                Log.i("DEBUG", "Nome cidade: " + cidade.getCidadeNome());
+                Log.i("DEBUG","**********************");
+
+                listacrimes = cidade.getCidadeCrimes();
+
+                for (TipoCrime crime : listacrimes) {
+                    Log.i("DEBUG", "Tipo crime: "+crime.getCrimeTipo() + " - Número total de crimes: " + crime.getCrimeNumeroTotal());
+                }
             }
 
             Log.i("DEBUG","**********************");
