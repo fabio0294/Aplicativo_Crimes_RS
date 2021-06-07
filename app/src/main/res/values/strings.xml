@@ -12,8 +12,8 @@
     <string name="menu_geral">Dados Gerais</string>
     <string name="menu_gallery">Cidades por Tipo de Crime</string>
     <string name="menu_slideshow">Tipos de Crimes por Cidade</string>
-    <string name="textViewTitleCrimes">Totais de Crimes no RS em 2020</string>
-    <string name="textViewTitleCidades">Totais de Crimes por Cidade em 2020</string>
+    <string name="textViewTitleCrimes">Totais de Crimes no RS 2020</string>
+    <string name="textViewTitleCidades">Totais de Crimes por Cidade 2020</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="TituloAberturaOcorrencia">Formulário de Ocorrência</string>
@@ -25,6 +25,8 @@
     <string name="BoletimDataOcorrencia">Data do Ocorrido</string>
     <string name="BotaoOcorrencia">Gerar Ocorrência</string>
     <string name="Titulosplash">CRIME-RS</string>
+    <string name="title_activity_map_dados_cidades">Map</string>
+    <string name="BtnAbrirMapa">Visualizar Mapa</string>
 
 
 </resources>
