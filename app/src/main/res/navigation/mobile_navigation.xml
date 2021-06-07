@@ -29,4 +29,10 @@
         android:label="Abrir Boletim de Ocorrência"
         tools:layout="@layout/fragment_criacao_boletim" />
 
+    <fragment
+        android:id="@+id/nav_graf"
+        android:name="com.example.projetofinal.GraficoPieCrimes"
+        android:label="Estatísticas Criminais"
+        tools:layout="@layout/fragment_grafico_pie_crimes" />
+
 </navigation>

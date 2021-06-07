@@ -20,5 +20,9 @@
             android:id="@+id/nav_bo"
             android:icon="@drawable/icon_ocorrencia"
             android:title="Abrir Boletim de Ocorrência" />
+        <item
+            android:id="@+id/nav_graf"
+            android:icon="@drawable/icon_pie"
+            android:title="Estatísticas Criminais" />
     </group>
 </menu>

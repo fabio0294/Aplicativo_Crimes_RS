@@ -8,6 +8,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.projetofinal.ui.model.Cidade;
 import com.example.projetofinal.ui.model.TipoCrime;
 
 import org.json.JSONArray;
@@ -15,6 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class PresenterDadosGerais implements Response.Listener<JSONArray>,
@@ -22,6 +24,9 @@ public class PresenterDadosGerais implements Response.Listener<JSONArray>,
 
     private List<Parcelable> lista;
     private InterfaceDados.DataView view;
+    private Iterator<String> keysCidade;
+    private Iterator<String> keysCrimes;
+    private int totalCrimes;
 
     public PresenterDadosGerais(InterfaceDados.DataView view) {
         this.view = view;
@@ -29,7 +34,7 @@ public class PresenterDadosGerais implements Response.Listener<JSONArray>,
 
     @Override
     public void start() {
-        String url = "https://babyier.rocks/uniritter/DadosCrimeRS2020_TiposCrimesTotais.json";
+        String url = "https://babyier.rocks/uniritter/DadosCrimeRS2020_CrimesPorTipo.json";
         RequestQueue queue = Volley.newRequestQueue(view.getContexto());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 this, this);
@@ -42,12 +47,31 @@ public class PresenterDadosGerais implements Response.Listener<JSONArray>,
 
         try {
             for(int i = 0; i < response.length(); i++) {
-                JSONObject json = null;
-                json = response.getJSONObject(i);
+                JSONObject json = response.getJSONObject(i);
+                keysCrimes = json.keys();
 
-                TipoCrime obj = new TipoCrime(json.getString("TIPO"),json.getInt("TOTAL"));
-                obj.getCrimeTipo();
-                lista.add(obj);
+                //LEITURA DO TIPO DE CRIME
+                while (keysCrimes.hasNext()) {
+                    List<Cidade> cidades = new ArrayList<>();
+                    String keyCrime = keysCrimes.next();
+
+                    totalCrimes = 0;
+                    cidades.clear();
+
+                    //LEITURA DOS ITENS DA CIDADE (TIPOS DE CRIMES E VALOR)
+                    JSONObject jsonExt = json.getJSONObject(keyCrime);
+                    keysCrimes = jsonExt.keys();
+                    while (keysCrimes.hasNext()) {
+                        String keyItemCidade = keysCrimes.next();
+                        Cidade cidade = new Cidade(keyItemCidade, jsonExt.getInt(keyItemCidade));
+                        totalCrimes += cidade.getCidadeNumeroTotalCrimes();
+
+                        cidades.add(cidade);
+                    }
+
+                    TipoCrime crime = new TipoCrime(keyCrime, cidades, totalCrimes);
+                    lista.add(crime);
+                }
             }
 
             view.bindLista(lista);

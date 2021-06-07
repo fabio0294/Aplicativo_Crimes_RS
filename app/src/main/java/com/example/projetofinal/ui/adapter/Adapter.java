@@ -87,32 +87,22 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ListaViewHolder> {
                     CardView btn = (CardView) v;
                     Cidade cidade = (Cidade) btn.getTag();
                     Intent intent = new Intent(holder.viewcidades.getRoot().getContext(), DetalheCidade.class);
-
-                    List<TipoCrime> arrayCrimes = cidade.getCidadeCrimes();
-                    Log.i("DEBUG","**********************");
-                    Log.i("DEBUG","Tamanho da lista de crimes no adapter: " + arrayCrimes.size());
-                    Log.i("DEBUG","**********************");
-
                     intent.putExtra("objCidade", cidade);
+
+                    int aux = 1;
+                    List<TipoCrime> arrayCrimes = cidade.getCidadeCrimes();
+                    for(TipoCrime crime:arrayCrimes){
+                        intent.putExtra("NomeCrime" + aux, crime.getCrimeTipo());
+                        intent.putExtra("NumeroCrime" + aux, crime.getCrimeNumeroTotal());
+                        aux ++;
+                    }
+
                     holder.viewcidades.getRoot().getContext().startActivity(intent);
 
                 }
             });
         }
     }
-
-    /*// aqui vai atender o onclick definido no layout
-    public void cardClick(View v) {
-        Log.e("OPA","aqui");
-        CardView btn = (CardView) v;
-        Cidade cidade = (Cidade) btn.getTag();
-        Log.e("OPA","aqui1");
-        Intent intent = new Intent(v.getContext(), DetalheCidade.class);
-        intent.putExtra("objcidade", cidade);
-        v.getContext().startActivity(intent);
-        Log.e("OPA","aqui2");
-    }*/
-
 
     @Override
     public int getItemCount() {

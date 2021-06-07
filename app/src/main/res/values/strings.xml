@@ -24,6 +24,7 @@
     <string name="BoletimDescricaoOcorrencia">Descreva o Ocorrido</string>
     <string name="BoletimDataOcorrencia">Data do Ocorrido</string>
     <string name="BotaoOcorrencia">Gerar Ocorrência</string>
+    <string name="Titulosplash">CRIME-RS</string>
 
 
 </resources>

@@ -29,16 +29,11 @@ import java.util.Map;
 public class PresenterDadosCidades implements Response.Listener<JSONArray>,
         Response.ErrorListener, InterfaceDados.DataPresenter{
 
-    private List<Parcelable> lista;
+    private List<Parcelable> lista = new ArrayList<>();
     private InterfaceDados.DataView view;
-    private List<TipoCrime> crimes =  new ArrayList<>();
-    private List<TipoCrime> listacrimes =  new ArrayList<>();
-    private TipoCrime crime;
     private Iterator<String> keysCidade;
     private Iterator<String> keysCrimes;
     private int totalCrimes;
-    private int aux = 0;
-
     public PresenterDadosCidades(InterfaceDados.DataView view) {
         this.view = view;
     }
@@ -54,18 +49,14 @@ public class PresenterDadosCidades implements Response.Listener<JSONArray>,
 
     @Override
     public void onResponse(JSONArray response) {
-        this.lista = new ArrayList<>();
-
         try {
-            Log.i("DEBUG","**********************AQUI FAZEMOS A LEITURA DA CIDADE INSTANCIADA COM SEUS CRIMES E TOTAIS");
-
             for(int i = 0; i < response.length(); i++) {
                 JSONObject json = response.getJSONObject(i);
                 keysCidade = json.keys();
 
                 //LEITURA DA CIDADE
                 while (keysCidade.hasNext()) {
-
+                    List<TipoCrime> crimes = new ArrayList<>();
                     String keyCidade = keysCidade.next();
 
                     totalCrimes = 0;
@@ -75,73 +66,15 @@ public class PresenterDadosCidades implements Response.Listener<JSONArray>,
                     JSONObject jsonExt = json.getJSONObject(keyCidade);
                     keysCrimes = jsonExt.keys();
                     while (keysCrimes.hasNext()) {
-
                         String keyItemCrime = keysCrimes.next();
-
-                        crime = new TipoCrime(keyItemCrime,jsonExt.getInt(keyItemCrime));
-                        crimes.add(crime);
+                        TipoCrime crime = new TipoCrime(keyItemCrime, jsonExt.getInt(keyItemCrime));
                         totalCrimes += crime.getCrimeNumeroTotal();
+
+                        crimes.add(crime);
                     }
 
-                    Cidade obj = new Cidade(keyCidade,crimes,totalCrimes);
+                    Cidade obj = new Cidade(keyCidade, crimes, totalCrimes);
                     lista.add(obj);
-
-                    listacrimes = obj.getCidadeCrimes();
-
-                    Log.i("DEBUG","**********************");
-                    Log.i("DEBUG","Nome cidade: " + obj.getCidadeNome());
-                    Log.i("DEBUG","**********************");
-                    for(TipoCrime tipocrime:listacrimes){
-                        Log.i("DEBUG","Tipo crime: " + tipocrime.getCrimeTipo() + " - Número total de crimes: " + tipocrime.getCrimeNumeroTotal());
-                    }
-
-                    //EXIBIMOS APENAS AS DUAS PRIMEIRAS CIDADES PARA TESTE
-                    aux ++;
-                    if (aux == 2){
-                        break;
-                    }
-                }
-                //EXIBIMOS APENAS AS DUAS PRIMEIRAS CIDADES PARA TESTE
-                if (aux == 2){
-                    break;
-                }
-                //EXIBIMOS APENAS AS DUAS PRIMEIRAS CIDADES PARA TESTE
-                if (aux == 2){
-                    break;
-                }
-            }
-
-            Log.i("DEBUG","**********************");
-            Log.i("DEBUG", "**********************RESULTADO DA LISTA DE PARCELABLE QUE ARMAZENA AS INSTANCIAS DE CIDADE (AQUI ESTÁ APRESENTANDO OS TOTAIS DA CIDADE AGUA SANTA PARA TODAS AS CIDADES LIDAS )");
-
-            for (Parcelable parcelable:lista) {
-                Cidade cidade = (Cidade) parcelable;
-
-                Log.i("DEBUG","**********************");
-                Log.i("DEBUG", "Nome cidade: " + cidade.getCidadeNome());
-                Log.i("DEBUG","**********************");
-
-                listacrimes = cidade.getCidadeCrimes();
-
-                for (TipoCrime crime : listacrimes) {
-                    Log.i("DEBUG", "Tipo crime: "+crime.getCrimeTipo() + " - Número total de crimes: " + crime.getCrimeNumeroTotal());
-                }
-            }
-
-            Log.i("DEBUG","**********************");
-            Log.i("DEBUG", "**********************RESULTADO DA LISTA DE PARCELABLE QUE ARMAZENA AS INSTANCIAS DE CIDADE (AQUI ESTÁ APRESENTANDO OS TOTAIS DA CIDADE AGUA SANTA PARA TODAS AS CIDADES LIDAS )");
-
-            for (Parcelable parcelable:lista) {
-                Cidade cidade = (Cidade) parcelable;
-
-                Log.i("DEBUG","**********************");
-                Log.i("DEBUG", "Nome cidade: " + cidade.getCidadeNome());
-                Log.i("DEBUG","**********************");
-
-                listacrimes = cidade.getCidadeCrimes();
-
-                for (TipoCrime crime : listacrimes) {
-                    Log.i("DEBUG", "Tipo crime: "+crime.getCrimeTipo() + " - Número total de crimes: " + crime.getCrimeNumeroTotal());
                 }
             }
 
