@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="cidades"
             type="com.example.projetofinal.ui.model.Cidade" />
     </data>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -24,15 +24,16 @@
         app:cardBackgroundColor="@color/design_default_color_surface">
 
         <LinearLayout
+            android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#C1BEBE"
+            android:background="#212121"
             android:orientation="vertical"
-            android:padding="5dp">
+            android:padding="1dp">
 
             <TextView
                 android:id="@+id/textViewTitleNomeCidade"
-                android:textColor="@color/purple_200"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,11 +43,11 @@
             <TextView
                 android:id="@+id/textViewNumeroCrimesCidade"
                 android:layout_width="wrap_content"
-                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
                 android:text="@{Integer.toString(cidades.cidadeNumeroTotalCrimes)}"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
