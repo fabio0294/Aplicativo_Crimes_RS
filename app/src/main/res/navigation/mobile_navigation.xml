@@ -3,36 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
-
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.projetofinal.TelaInicial"
-        android:label="Newsletter"
-        tools:layout="@layout/fragment_inicio" />
-
-    <fragment
-        android:id="@+id/nav_geral"
-        android:name="com.example.projetofinal.DadosGerais"
-        android:label="Dados Gerais"
-        tools:layout="@layout/fragment_dados_gerais" />
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.projetofinal.DadosCidades"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_dados_cidades" />
-
-    <fragment
-        android:id="@+id/nav_bo"
-        android:name="com.example.projetofinal.CriacaoBoletim"
-        android:label="Abrir Boletim de Ocorrência"
-        tools:layout="@layout/fragment_criacao_boletim" />
+    app:startDestination="@+id/nav_graf">
 
     <fragment
         android:id="@+id/nav_graf"
         android:name="com.example.projetofinal.GraficoPieCrimes"
         android:label="Estatísticas Criminais"
         tools:layout="@layout/fragment_grafico_pie_crimes" />
+
+    <fragment
+        android:id="@+id/nav_geral"
+        android:name="com.example.projetofinal.DadosGerais"
+        android:label="Dados Criminais"
+        tools:layout="@layout/fragment_dados_gerais" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.projetofinal.DadosCidades"
+        android:label="Dados Criminais por Cidades"
+        tools:layout="@layout/fragment_dados_cidades" />
+
+<!--
+    <fragment
+        android:id="@+id/nav_bo"
+        android:name="com.example.projetofinal.MenuBoletimOcorrencia"
+        android:label="Boletim de Ocorrência"
+        tools:layout="@layout/fragment_menu_boletim_ocorrencia" />
+-->
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.projetofinal.TelaInicial"
+        android:label="Notícias do Dia"
+        tools:layout="@layout/fragment_inicio" />
 
 </navigation>

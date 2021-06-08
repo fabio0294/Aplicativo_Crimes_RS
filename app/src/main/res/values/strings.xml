@@ -26,7 +26,9 @@
     <string name="BotaoOcorrencia">Gerar Ocorrência</string>
     <string name="Titulosplash">CRIME-RS</string>
     <string name="title_activity_map_dados_cidades">Map</string>
-    <string name="BtnAbrirMapa">Visualizar Mapa</string>
+    <string name="BtnAbrirMapa">Visualização dos Dados em Mapa</string>
+    <string name="BtnLogin">Efetuar Login</string>
+    <string name="TituloAbrirLoginOcorrencia">Para abrir um boletim de ocorrência é necessário efetuar login</string>
 
 
 </resources>

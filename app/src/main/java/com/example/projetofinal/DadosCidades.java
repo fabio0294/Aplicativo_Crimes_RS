@@ -1,16 +1,13 @@
 package com.example.projetofinal;
 
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,27 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.projetofinal.ui.adapter.Adapter;
-import com.example.projetofinal.ui.model.Cidade;
-import com.example.projetofinal.ui.model.TipoCrime;
 import com.example.projetofinal.ui.presenter.InterfaceDados;
 import com.example.projetofinal.ui.presenter.PresenterDadosCidades;
-import com.firebase.ui.auth.AuthUI;
-import com.google.firebase.auth.FirebaseAuth;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class DadosCidades extends Fragment implements InterfaceDados.DataView {
@@ -65,7 +45,7 @@ public class DadosCidades extends Fragment implements InterfaceDados.DataView {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(root.getContext(), MapDadosCidades.class);
+                Intent intent = new Intent(root.getContext(), MapaDadosCidades.class);
                 startActivity(intent);
             }
         });

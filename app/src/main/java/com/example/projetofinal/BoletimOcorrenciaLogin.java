@@ -1,41 +1,31 @@
 package com.example.projetofinal;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.projetofinal.ui.model.Cidade;
-import com.example.projetofinal.ui.model.TipoCrime;
+import com.example.projetofinal.ui.services.FirebaseServices;
 import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class CriacaoBoletim extends Fragment {
-    private View root;
+public class BoletimOcorrenciaLogin extends AppCompatActivity {
     private static final int RC_SIGN_IN = 123;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        setContentView(R.layout.activity_geracao_boletim_ocorrencia);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        root = inflater.inflate(R.layout.fragment_criacao_boletim, container, false);
-
-        Button bt = root.findViewById(R.id.button);
+        Button bt = findViewById(R.id.buttonLogin);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,17 +44,28 @@ public class CriacaoBoletim extends Fragment {
                                     .build(),
                             RC_SIGN_IN);
                 } else {
-                    /*Intent intent = new Intent(this, PrincipalActivity.class);
-                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());*/
-
+                    Intent intent = new Intent(getApplicationContext(), CriacaoOcorrencia.class);
+                    startActivity(intent);
                 }
             }
         });
-
-        return root;
     }
 
-    public void onClick(View v) {
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if (requestCode == RC_SIGN_IN) {
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+
+            if (resultCode == RESULT_OK) {
+                // Successfully signed in
+                FirebaseServices.setFirebaseUser( FirebaseServices.getFirebaseAuthInstance().getCurrentUser() );
+                Intent intent = new Intent(this, CriacaoOcorrencia.class);
+                startActivity(intent);
+            } else {
+                Log.e("failed","Falha no login");
+            }
+        }
     }
 }

@@ -21,24 +21,23 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        app:cardBackgroundColor="@color/design_default_color_surface">
+        app:cardBackgroundColor="@android:color/secondary_text_dark">
 
         <LinearLayout
-            android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#212121"
+            android:background="#C1BEBE"
             android:orientation="vertical"
-            android:padding="1dp">
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/textViewTitleNomeCidade"
-                android:textColor="@color/white"
-                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@{cidades.cidadeNome}" />
+                android:text="@{cidades.cidadeNome}"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewNumeroCrimesCidade"

@@ -3,16 +3,18 @@ package com.example.projetofinal;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.projetofinal.databinding.ActivityMapDadosCidadesBinding;
 
-public class MapDadosCidades extends FragmentActivity implements OnMapReadyCallback {
+public class MapaDadosCidades extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityMapDadosCidadesBinding binding;
@@ -86,5 +88,16 @@ public class MapDadosCidades extends FragmentActivity implements OnMapReadyCallb
         mMap.addMarker(new MarkerOptions().position(capaoCanoa).title("CAPAO DA CANOA - 1633"));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(agudo,6));
+
+        /*mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                //if(marker.equals(marker_1)){
+                    Log.i("debug", "marker: " + marker.getTitle());
+                    return true;
+                //}
+                //return false;
+            }
+        });*/
     }
 }

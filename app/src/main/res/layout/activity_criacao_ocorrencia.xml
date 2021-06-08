@@ -11,6 +11,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="1px"
+        android:layout_marginTop="1px"
+        android:layout_marginEnd="1px"
+        android:layout_marginBottom="1px"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,108 +23,108 @@
         app:layout_constraintVertical_bias="1.0">
 
         <TextView
-            android:textColor="@color/black"
-            android:textStyle="bold"
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:text="@string/TituloAberturaOcorrencia"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:textColor="@color/black"
-            android:backgroundTint="@color/black"
             android:id="@+id/BoletimNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
+            android:backgroundTint="@color/black"
             android:contentDescription="@string/BoletimNome"
             android:ems="10"
             android:hint="@string/BoletimNome"
             android:imeActionLabel="@string/BoletimNome"
             android:inputType="textPersonName"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:textColor="@color/black" />
 
         <EditText
-            android:textColor="@color/black"
-            android:backgroundTint="@color/black"
             android:id="@+id/BoletimCpf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
+            android:backgroundTint="@color/black"
             android:contentDescription="@string/BoletimCpf"
             android:ems="10"
             android:hint="@string/BoletimCpf"
             android:imeActionLabel="@string/BoletimCpf"
             android:inputType="textPersonName"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:textColor="@color/black" />
 
         <EditText
-            android:textColor="@color/black"
-            android:backgroundTint="@color/black"
             android:id="@+id/BoletimDataNascimento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
+            android:backgroundTint="@color/black"
             android:contentDescription="@string/BoletimDataNasc"
             android:ems="10"
             android:hint="@string/BoletimDataNasc"
             android:imeActionLabel="@string/BoletimDataNasc"
             android:inputType="date"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:textColor="@color/black" />
 
         <EditText
-            android:textColor="@color/black"
-            android:backgroundTint="@color/black"
             android:id="@+id/BoletimAssunto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
+            android:backgroundTint="@color/black"
             android:contentDescription="@string/BoletimAssunto"
             android:ems="10"
             android:hint="@string/BoletimAssunto"
             android:imeActionLabel="@string/BoletimAssunto"
             android:inputType="textPersonName"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:textColor="@color/black" />
 
         <EditText
-            android:textColor="@color/black"
-            android:backgroundTint="@color/black"
             android:id="@+id/BoletimDataOcorrido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
+            android:backgroundTint="@color/black"
             android:contentDescription="@string/BoletimDataOcorrencia"
             android:ems="10"
             android:hint="@string/BoletimDataOcorrencia"
             android:imeActionLabel="@string/BoletimDataOcorrencia"
             android:inputType="date"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:textColor="@color/black" />
 
         <EditText
-            android:textColor="@color/black"
-            android:backgroundTint="@color/black"
             android:id="@+id/BoletimDescricao"
             android:layout_width="match_parent"
-            android:layout_height="245dp"
-            android:layout_marginTop="20px"
+            android:layout_height="200dp"
+            android:layout_marginTop="5px"
+            android:backgroundTint="@color/black"
             android:contentDescription="@string/BoletimDescricaoOcorrencia"
             android:ems="10"
             android:hint="@string/BoletimDescricaoOcorrencia"
             android:imeActionLabel="@string/BoletimDescricaoOcorrencia"
             android:inputType="textPersonName"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            android:textColor="@color/black" />
 
         <Button
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:id="@+id/button"
+            android:id="@+id/buttonGerarOcorrencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20px"
+            android:layout_marginTop="5px"
             android:backgroundTint="@color/design_default_color_on_secondary"
-            android:text="@string/BotaoOcorrencia" />
+            android:text="@string/BotaoOcorrencia"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

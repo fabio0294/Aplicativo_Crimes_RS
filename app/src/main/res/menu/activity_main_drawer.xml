@@ -5,24 +5,24 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@mipmap/home"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_geral"
-            android:icon="?android:attr/actionModeFindDrawable"
-            android:title="@string/menu_geral" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="?android:attr/actionModeFindDrawable"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_bo"
-            android:icon="@drawable/icon_ocorrencia"
-            android:title="Abrir Boletim de Ocorrência" />
-        <item
             android:id="@+id/nav_graf"
             android:icon="@drawable/icon_pie"
             android:title="Estatísticas Criminais" />
+        <item
+            android:id="@+id/nav_geral"
+            android:icon="?android:attr/actionModeFindDrawable"
+            android:title="Dados Criminais" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="?android:attr/actionModeFindDrawable"
+            android:title="Dados Criminais por Cidades" />
+        <!--<item
+            android:id="@+id/nav_bo"
+            android:icon="@drawable/icon_ocorrencia"
+            android:title="Boletim de Ocorrência" />-->
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/newsletter"
+            android:title="Notícias do Dia" />
     </group>
 </menu>
