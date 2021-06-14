@@ -12,9 +12,9 @@
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
-        android:icon="@mipmap/img_icone"
+        android:icon="@mipmap/teste_2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/img_icone"
+        android:roundIcon="@mipmap/teste_2"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoFinal">
         <activity android:name=".CriacaoOcorrencia"></activity>

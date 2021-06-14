@@ -14,6 +14,10 @@ public class Cidade implements Parcelable {
         return cidadeNumeroTotalCrimes;
     }
 
+    public String getCidadeNumeroTotalCrimesString() {
+        return "Número total de Crimes: " + cidadeNumeroTotalCrimes;
+    }
+
     public Cidade(String cidadeNome) {
         this.cidadeNome = cidadeNome;
     }

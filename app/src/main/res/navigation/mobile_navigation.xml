@@ -8,19 +8,19 @@
     <fragment
         android:id="@+id/nav_graf"
         android:name="com.example.projetofinal.GraficoPieCrimes"
-        android:label="Estatísticas Criminais"
+        android:label="Estatísticas Criminais Ref. 2020"
         tools:layout="@layout/fragment_grafico_pie_crimes" />
 
     <fragment
         android:id="@+id/nav_geral"
         android:name="com.example.projetofinal.DadosGerais"
-        android:label="Dados Criminais"
+        android:label="Crime/Número Total"
         tools:layout="@layout/fragment_dados_gerais" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.projetofinal.DadosCidades"
-        android:label="Dados Criminais por Cidades"
+        android:label="Cidade/Número Total de Crimes"
         tools:layout="@layout/fragment_dados_cidades" />
 
 <!--

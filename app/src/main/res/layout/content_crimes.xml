@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="crimes"
             type="com.example.projetofinal.ui.model.TipoCrime" />
     </data>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -16,14 +16,15 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/cardViewCrime"
+        android:layout_width="380dp"
+        android:layout_height="match_parent"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         app:cardBackgroundColor="@color/design_default_color_surface">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:background="#C1BEBE"
             android:orientation="vertical"
@@ -31,22 +32,29 @@
 
             <TextView
                 android:id="@+id/textViewTitleNomeCrime"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif"
                 android:text="@{crimes.crimeTipo}"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imageViewCompartilhar"
+                android:layout_width="700dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/icon_compartilhar" />
 
             <TextView
                 android:id="@+id/textViewNumeroCrimesCidade"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
                 android:text="@{Integer.toString(crimes.crimeNumeroTotal)}"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

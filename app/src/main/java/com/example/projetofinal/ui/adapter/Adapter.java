@@ -1,6 +1,7 @@
 package com.example.projetofinal.ui.adapter;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -74,6 +75,25 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ListaViewHolder> {
         if (this.lista.get(position) instanceof TipoCrime) {
             TipoCrime tipoCrime = (TipoCrime) this.lista.get(position);
             holder.viewcrimes.setCrimes(tipoCrime);
+
+            CardView bt = holder.viewcrimes.getRoot().findViewById(R.id.cardViewCrime);
+            bt.setTag(tipoCrime);
+            bt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CardView btn = (CardView) v;
+                    TipoCrime crimeCompartilhamento = (TipoCrime) btn.getTag();
+
+                    String textoCompartilhar = "Tipo de Crime: " + crimeCompartilhamento.getCrimeTipo() + " Número Total de Crimes: " + crimeCompartilhamento.getCrimeNumeroTotal();
+
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_SEND);
+                    intent.setType("string/plain");
+                    intent.putExtra(Intent.EXTRA_TEXT,textoCompartilhar);
+                    holder.viewcrimes.getRoot().getContext().startActivity(intent);
+                }
+            });
+
         }else if(this.lista.get(position) instanceof Cidade){
             Cidade cidade = (Cidade) this.lista.get(position);
 

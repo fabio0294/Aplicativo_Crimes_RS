@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -41,8 +42,8 @@ public class DadosCidades extends Fragment implements InterfaceDados.DataView {
             }
         });
 
-        Button bt = root.findViewById(R.id.buttonOpenMap);
-        bt.setOnClickListener(new View.OnClickListener() {
+        ImageView image = root.findViewById(R.id.buttonOpenMap);
+        image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(root.getContext(), MapaDadosCidades.class);
