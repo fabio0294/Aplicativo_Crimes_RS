@@ -46,7 +46,7 @@ public class DadosCidades extends Fragment implements InterfaceDados.DataView {
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(root.getContext(), MapaDadosCidades.class);
+                Intent intent = new Intent(root.getContext(), MapsActivity.class);
                 startActivity(intent);
             }
         });

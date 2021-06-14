@@ -29,6 +29,7 @@
     <string name="BtnAbrirMapa">Visualização dos Dados em Mapa</string>
     <string name="BtnLogin">Efetuar Login</string>
     <string name="TituloAbrirLoginOcorrencia">Para abrir um boletim de ocorrência é necessário efetuar login</string>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>
